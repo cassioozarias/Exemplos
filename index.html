@@ -26,7 +26,7 @@
                             waitMsg: 'Verificando informações...',
                             success: function() {
                                 login.getForm().reset();
-                                var redirect = 'http://localhost:8082/principal.html';
+                                var redirect = 'principal.html';
                                 window.location = redirect;
                             },
                             failure: function(form, action) {
@@ -57,7 +57,7 @@
 
                 var login = new Ext.FormPanel({
                     labelWidth: 50,
-                    url: 'http://localhost:8082/php/Login.php?action=logar',
+                    url: 'php/Login.php?action=logar',
                     frame: true,
                     defaultType: 'textfield',
                     monitorValid: true,
