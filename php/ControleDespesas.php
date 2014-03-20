@@ -21,7 +21,7 @@ class ControleDespesa extends Base {
 
         $result = $stm->fetch(\PDO::FETCH_ASSOC);
 
-        $insert = $db->lastInsertId();
+        $insert = $db->lastInsertId('controle_despesa_id_seq');
         
         $msg = $insert ? 'Registro(s) inserido(s) com sucesso' : 'Erro ao inserir o registro, tente novamente.';
         
