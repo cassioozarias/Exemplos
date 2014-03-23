@@ -31,7 +31,7 @@ Ext.define('WSExt.view.controleDespesa.Edit', {
                 name : 'valor',
                 ref: 'valor',
                 fieldLabel: 'Valor',
-                maxValue: 0,
+                minValue: 0,
                 allowDecimals: true,
                 decimalPrecision: 2,
                 decimalSeparator: '.',

@@ -63,7 +63,10 @@ class Financa extends Base {
         
         $db = $this->getDb();
         
-        $sql = "select sum(valor) as total, month(data) as mes from financa group by month(data)";
+        // este mesmo comentário se aplica no SQL da 'public function ganho()' e da 'public function despesa()'
+        // como o campo valor é do tipo CHARACTER VARYING, deve ser convertida para real para ser aplicada na função SUM
+        // a função datepart('month', <timestamp>) retorna o valor numérico correspondente ao mês da data
+        $sql = "select sum(CAST(financa.valor as real)) as total, date_part('month', data) as mes from financa group by mes order by mes";
         
         $stm = $db->prepare($sql);
         $stm->execute();
@@ -78,7 +81,7 @@ class Financa extends Base {
         
         $db = $this->getDb();
         
-        $sql = "select sum(valor) as total, month(data) as mes from controle_ganho group by month(data)";
+        $sql = "select sum(CAST(controle_ganho.valor as real)) as total, date_part('month', data) as mes from controle_ganho group by mes order by mes";
         
         $stm = $db->prepare($sql);
         $stm->execute();
@@ -93,7 +96,7 @@ class Financa extends Base {
         
         $db = $this->getDb();
         
-        $sql = "select sum(valor) as total, month(data) as mes from controle_despesa group by month(data)";
+        $sql = "select sum(CAST(controle_despesa.valor as real)) as total, date_part('month', data) as mes from controle_despesa group by mes order by mes";
         
         $stm = $db->prepare($sql);
         $stm->execute();
