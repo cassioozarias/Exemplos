@@ -16,7 +16,8 @@ Ext.define('WSExt.view.financas.DespesaGrafico' ,{
         },
         title: 'Despesa total',
         grid: true,
-        minimum: 0
+        minimum: 0,
+        maximum: 30
     }, {
         type: 'Category',
         position: 'bottom',

@@ -16,7 +16,8 @@ Ext.define('WSExt.view.financas.GanhoGrafico' ,{
         },
         title: 'Ganho total',
         grid: true,
-        minimum: 0
+        minimum: 0,
+        adjustMaximumByMajorUnit: true
     }, {
         type: 'Category',
         position: 'left',
