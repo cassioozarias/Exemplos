@@ -65,6 +65,7 @@ Ext.define('WSExt.view.financas.Grafico' ,{
         ];
         
         this.callParent();
+        this.down('#grafico').store.load();
     }
     
 });
