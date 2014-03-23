@@ -1,5 +1,5 @@
 Ext.define('WSExt.view.tipoDespesaGanho.Edit',{
-    extend: 'Ext.window.Window',
+    extend: 'WSExt.view.AbstractWindow',
     alias: 'widget.tipoDespesaGanhoEdit',
     title: 'Edição de tipo de ganho e despesa',
     layout: 'fit',
@@ -8,22 +8,13 @@ Ext.define('WSExt.view.tipoDespesaGanho.Edit',{
     
     initComponent: function(){
         
-        this.items = [
-            {
-                xtype: 'form',
-                defaultType: 'textfield',
-                defaults: {
-                    anchor: '100%'
-                },
-                items: [
-                    {
-                        name: 'nome',
-                        fieldLabel: 'Nome',
-                        allowBlank: false
-                    }
-                ]
-            }
-        ]
+        this.items = [{
+            xtype: 'abstractform',
+            items: [{
+                name : 'nome',
+                fieldLabel: 'Nome'
+            }]}
+        ];
         
         this.callParent(arguments);
     }
