@@ -26,11 +26,6 @@ Ext.define('WSExt.controller.TipoGanho', {
             'tipoGanhoList': {
                 itemdblclick: this.edit
             },
-            
-//            'tipoGanhoList': {
-//                meuevento: this.disparandoNossoEvento
-//            },
-
             'tipoGanhoList button[action=insert]': {
                 click: this.insert
             },
@@ -51,10 +46,6 @@ Ext.define('WSExt.controller.TipoGanho', {
                 click: this.save
             }
         });
-    },
-    
-    disparandoNossoEvento: function(){
-        console.log('Evento customizado detectado');
     },
     
     refresh: function(){
