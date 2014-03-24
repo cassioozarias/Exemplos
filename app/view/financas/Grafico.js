@@ -54,7 +54,7 @@ Ext.define('WSExt.view.financas.Grafico' ,{
                     'text-anchor': 'middle',
                     field: 'total',
                     renderer: Ext.util.Format.numberRenderer('0'),
-                    orientation: 'vertical',
+                    orientation: 'horizontal',
                     color: '#333'
                 },
                 xField: 'mes',
